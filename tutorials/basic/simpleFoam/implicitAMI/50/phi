@@ -1,0 +1,101 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2306                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       surfaceScalarField;
+    location    "50";
+    object      phi;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 3 -1 0 0 0 0];
+
+oriented        oriented;
+
+internalField   nonuniform List<scalar> 
+32
+(
+0.000168545
+3.14552e-05
+4.96016e-05
+0.000174464
+5.69641e-05
+5.19367e-05
+0.000199462
+5.74962e-05
+6.50431e-05
+0.000213117
+4.43786e-05
+3.09668e-05
+0.000244384
+0.000137131
+-7.64716e-05
+-0.000114191
+0.000156488
+-9.93641e-05
+-0.000140544
+0.000131253
+-0.000115316
+-0.000159523
+0.000154274
+-0.000135794
+-0.000138516
+0.000142126
+-9.39951e-05
+-8.37503e-05
+6.18515e-05
+-1.40416e-05
+-4.9675e-05
+0.000216572
+)
+;
+
+boundaryField
+{
+    AMI1
+    {
+        type            cyclicAMI;
+        value           nonuniform List<scalar> 5(0.00011895 0.000172136 0.000186372 0.000247215 0.000275339);
+    }
+    AMI2
+    {
+        type            cyclicAMI;
+        value           nonuniform List<scalar> 7(-6.06676e-05 -0.000133568 -0.000115306 -0.000133804 -0.000183936 -0.000141818 -0.000230591);
+    }
+    top
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    bottom
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    left
+    {
+        type            calculated;
+        value           nonuniform List<scalar> 5(-0.0002 -0.0002 -0.0002 -0.0002 -0.0002);
+    }
+    right
+    {
+        type            calculated;
+        value           nonuniform List<scalar> 7(0.000251309 0.000182841 0.000150219 0.00013325 8.73547e-05 2.77905e-05 0.000166877);
+    }
+    frontAndBack
+    {
+        type            empty;
+        value           nonuniform List<scalar> 0();
+    }
+}
+
+
+// ************************************************************************* //
