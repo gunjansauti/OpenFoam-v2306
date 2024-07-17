@@ -116,14 +116,14 @@ export WM_PROJECT=OpenFOAM
 #    This can be removed if an absolute path is provided for WM_PROJECT_DIR
 #    later on in this file
 # --
-#projectDir="${BASH_SOURCE:-${ZSH_NAME:+$0}}";
-#[ -n "$projectDir" ] && projectDir="$(\cd $(dirname $projectDir)/.. && \pwd -L)" ||\
-#projectDir="$HOME/OpenFOAM/OpenFOAM-$WM_PROJECT_VERSION"
+projectDir="${BASH_SOURCE:-${ZSH_NAME:+$0}}";
+[ -n "$projectDir" ] && projectDir="$(\cd $(dirname $projectDir)/.. && \pwd -L)" ||\
+projectDir="$HOME/OpenFOAM/OpenFOAM-$WM_PROJECT_VERSION"
 # projectDir="/opt/openfoam/OpenFOAM-$WM_PROJECT_VERSION"
 # projectDir="/usr/local/OpenFOAM/OpenFOAM-$WM_PROJECT_VERSION"
 ################################################################################
 # Or optionally hard-coded (eg, with autoconfig)
-projectDir="/openfoam/OpenFoam-v2306"
+# projectDir="@PROJECT_DIR@"
 : # Safety statement (if the user removed all fallback values)
 
 # [FOAM_SIGFPE] - Trap floating-point exceptions.
